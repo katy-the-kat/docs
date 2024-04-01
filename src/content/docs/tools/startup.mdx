@@ -30,34 +30,40 @@ You should set your RAM allocation according to your average server load - alloc
 
 `nogui` hides the Minecraft server GUI panel, only leaving the console visible. Remove the flag if you choose to use the panel. It has basic features like a player list, performance metrics and console output.
 
-`-jar <server-jar-name>.jar` points to the server .jar - it's what you download from Paper/Purpur or other server software websites to run the server.
+`-jar <server-jar-name>.jar` points to the server .jar - see [Server Software](https://www.setup.md/t/server-software).
+
+---
+
+### Java flags
+
+Java flags are used to improve server performance and client stuttering by tuning Java's Garbage Collection and adding other optimizations.
+
+JVM flags go __before__ the `-jar` flag.
+
+---
+
+### Aikar flags
+
+Aikar's flags, while very well optimized for older Java versions, have not been updated since its creation and are severely out of date for modern Java versions. If you are running a 1.17+ Minecraft Java server (and use java 16+), it is recommended to use more up-to-date flags.
 
 ---
 
 ### Hilltty flags
 
-These flags are a more up to date version of Aikar's flags designed for modern versions of java (16 and 17), which should make the server run better. You can check the startup scripts in [here.](https://github.com/hilltty/hilltty-flags/blob/main/english-lang.md) 
+These flags are a more up to date version of Aikar's flags designed for modern versions of Java (16 and 17) which should perform better. You can check the startup scripts [here](https://github.com/hilltty/hilltty-flags/blob/main/english-lang.md).
 
 ---
 
-### Advanced JVM options
+### Advanced JVM flags and optimizations
 
-The JVM also offers a lot of additional options for startup - those are the JVM "flags" or "arguments". You might want to set those up for the best performance. For this, see the guide [Java Minecraft Flags](https://github.com/brucethemoose/Minecraft-Java-Performance-Flags) - it's a constantly updated collection of up-to-date flags for both Minecraft servers and clients. It also contains a small guide on GraalVM (an optimized JVM distribution). 
-
-JVM flags go _before_ the `-jar` flag.
-
-:::info
-You may have seen advice to use Aikar's flags - while those may have been the best a while ago, they have not been updated since the creation and therefore are massively out of date for modern Java versions. If you are running a 1.17+ Minecraft Java server (and use java 16+), don't use Aikar's flags.
-:::
-
-All JVM flags (with an option to sort for each distribution) can be found [here.](https://chriswhocodes.com/)
+The JVM can be further tweaked to optimize server and client stutters relating to Java. See [Minecraft Performance Flags](https://github.com/Mukul1127/Minecraft-Performance-Flags-Benchmarks), a up-to-date guide for Java flags, Garbage Collectors, Java runtimes (GraalVM), and other performance tips such as Large Pages and optimized Linux Distributions.
 
 ---
 
-### Advanced Minecraft server options
+### Minecraft server flags
 
-Minecraft also has quite a few startup options that affect the server in some way. Those go _after_ `-jar` in the startup script.
-The following information is from [the wiki](https://minecraft.wiki/w/Tutorials/Setting_up_a_server#Minecraft_options)
+Minecraft also has quite a few startup options that directly affects the server in some way. Those go _after_ `-jar` in the startup script.
+The following information is from [the wiki](https://minecraft.wiki/w/Tutorials/Setting_up_a_server#Minecraft_options).
 
 #### Minecraft options
 
