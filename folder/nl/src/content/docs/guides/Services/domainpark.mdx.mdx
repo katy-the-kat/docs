@@ -6,22 +6,22 @@ title: Domain Parking
 
 If you own multiple domains it may be worth looking into a service such as `domain-park` to ensure these domains remain secure while you're not using them. Thankfully domain-park is an open source project and implements the following features.
 
--   Best practices for SPF, DKIM, DMARC and MX compliance for parked domains
--   Easy to deploy with no server configuration per domain
--   Ability to configure DMARC reports
+- Best practices for SPF, DKIM, DMARC and MX compliance for parked domains
+- Easy to deploy with no server configuration per domain
+- Ability to configure DMARC reports
 
 If you do decide to run an instance (or two) of domain park you should aim for the following setup.
 
--   A domain you use for everything e.g. `servers.fun`
--   A domain you want to park e.g. `urho.st`
--   A VPS (or two) that have static (and public) IP addresses we can assign hostnames to
--   A DNS management panel such as `Cloudflare DNS`
+- A domain you use for everything e.g. `servers.fun`
+- A domain you want to park e.g. `urho.st`
+- A VPS (or two) that have static (and public) IP addresses we can assign hostnames to
+- A DNS management panel such as `Cloudflare DNS`
 
 :::danger
 Cloudflare registry doesn't support using external name servers, if your domain you wish to park is registered with Cloudflare you will need to use an alternative solution.
 :::
 
-* * *
+---
 
 ### Creating a VPS
 
@@ -29,16 +29,16 @@ If you're looking for a solid VPS provider, checkout Hetzner. You can use our af
 
 If you're using Hetzner you should be able to get away with deploying x2 `CPX11 instances` with the latest LTS build of Ubuntu (Debian works too) which should set you back €9/mo. It's also recommended that you add an SSH key and avoid using password based authentication.
 
-* * *
+---
 
 ### Setting up DNS (Active)
 
 So the first thing we will do is configure the DNS, this is because these _can_ take the longest to update in the background.
 
--   Login to your DNS provider and head to your DNS record section.
--   Select 'Add' and create an `A Record` enter `one.ns` and point it to one of your VPS IPs
-    -   **Optional**: If you have an IPv6 also add a `AAA Record` for the same hostname
--   Repeat this but replace `one.ns` with `two.ns`
+- Login to your DNS provider and head to your DNS record section.
+- Select 'Add' and create an `A Record` enter `one.ns` and point it to one of your VPS IPs
+  - **Optional**: If you have an IPv6 also add a `AAA Record` for the same hostname
+- Repeat this but replace `one.ns` with `two.ns`
 
 :::tip
 
@@ -68,7 +68,7 @@ dig two.ns.servers.fun AAA # Not configured in example
 
 Providing you replace `servers.fun` with your own domain you should see a response with the IP addresses you entered into your panel above.
 
-* * *
+---
 
 ### Setting up DNS (Parked)
 
@@ -80,6 +80,6 @@ You should ensure you fill out the nameservers as per the screenshot below. Once
 
 When using these nameservers you will not be able to host **ANY** content via the domain as domain-park does not allow for it. We have configured our nameservers to redirect to this page when accessing any of our IPs / Hostnames directly.
 
-* * *
+---
 
 ### Deploying Domain-Park
