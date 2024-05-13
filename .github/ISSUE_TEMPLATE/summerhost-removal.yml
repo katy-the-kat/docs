@@ -1,0 +1,23 @@
+name: ❌ Summerhost Removal
+description: Tell us about a summerhost that needs to be removed to our list.
+body:
+  - type: checkboxes
+    attributes:
+      label: Declaration
+      description: Only hosting providers themselves can request removal from our listing.
+      options:
+        - label: I declare that I am authorised to speak on behalf of this business entity.
+          required: true
+        - label: I declare that dishonestly completing this form will result in a permanent removal blacklist for the hosting entity.
+          required: true
+  - type: textarea
+    attributes:
+      label: Hosting Provider Name
+      description: What is the name of the hosting provider that needs to be added.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Evidence
+      description: |
+        e.g. Please provide evidence that you have corrected the offending items
