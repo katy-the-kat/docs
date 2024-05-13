@@ -1,0 +1,21 @@
+name: ✔ Summerhost Addition
+description: Tell us about a summerhost that needs to be added to our list.
+body:
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists
+      options:
+        - label: I have searched existing issues, it hasn't been reported yet
+          required: true
+  - type: textarea
+    attributes:
+      label: Hosting Provider Name
+      description: What is the name of the hosting provider that needs to be added.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Rule Violations
+      description: |
+        e.g. Tell us what bullet points from our list they are violating and if possible attach screenshots with evidence.
