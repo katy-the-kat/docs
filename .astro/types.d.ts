@@ -654,6 +654,13 @@ declare module 'astro:content' {
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
+"hosting/summerhosts.mdx": {
+	id: "hosting/summerhosts.mdx";
+  slug: "h/summerhosts";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
 "hosting/tls.mdx": {
 	id: "hosting/tls.mdx";
   slug: "h/ssl";
