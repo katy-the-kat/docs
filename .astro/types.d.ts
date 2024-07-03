@@ -813,8 +813,11 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		"i18n": {
-};
+		"i18n": Record<string, {
+  id: string;
+  collection: "i18n";
+  data: InferEntrySchema<"i18n">;
+}>;
 
 	};
 
